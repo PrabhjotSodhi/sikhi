@@ -3,6 +3,7 @@ import Sidebar from '@/components/Sidebar'
 
 import { Inter } from 'next/font/google'
 import './globals.css'
+import SupabaseProvider from '@/providers/SupabaseProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Sidebar>
-          {children}
-        </Sidebar>
+        <SupabaseProvider>
+          <Sidebar>
+            {children}
+          </Sidebar>
+        </SupabaseProvider>
       </body>
     </html>
   )
