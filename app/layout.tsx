@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import SupabaseProvider from '@/providers/SupabaseProvider'
 import UserProvider from '@/providers/UserProvider'
+import ModalProvider from '@/providers/ModalProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +20,10 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       <body className={inter.className}>
         <SupabaseProvider>
           <UserProvider>
-            <Sidebar>
-              {children}
-            </Sidebar>
+            <ModalProvider />
+              <Sidebar>
+                {children}
+              </Sidebar>
           </UserProvider>
         </SupabaseProvider>
       </body>
