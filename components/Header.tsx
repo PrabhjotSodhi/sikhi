@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { toast } from "react-hot-toast";
 
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
@@ -32,7 +33,9 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
     // TODO: Reset any playing shabadas
     router.refresh();
     if (error) {
-      console.log(error);
+      toast.error(error.message);
+    } else {
+      toast.success("Signed Out!");
     }
   }
 
@@ -54,7 +57,10 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
         </div>
         <div className="flex justify-between items-center gap-x-4">
           {user ? (
-            <div>Signed In</div>
+            <div className="flex gap-x-4 items-center">
+              <Button onClick={handleSignOut} className="bg-white px-6 py-2 whitespace-nowrap">Sign Out</Button>
+              <Button onClick={() => router.push('/account')} className="bg-white"><FaUserAlt /></Button>
+            </div>
           ): (
             <>
               <div>
