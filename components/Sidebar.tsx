@@ -2,15 +2,29 @@
 
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
+import useUploadModal from "@/hooks/useUploadModal";
 
 import Box from "./Box";
+
+
 
 interface SidebarProps {
     children: React.ReactNode;
 }
 
 const Sidebar = ({ children }: SidebarProps) => {
+  const authModal = useAuthModal();
+  const uploadModal = useUploadModal();
+  const { user } = useUser();
+
   const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
+    // TODO: Check stripe subscription
+    return uploadModal.onOpen();
   }
 
   return (
