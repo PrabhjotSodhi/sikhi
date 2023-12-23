@@ -16,7 +16,7 @@ export default async function Home() {
       </Header>
       <div className="mt-2 mb-7 px-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-white text-2xl font-semibold">Newest Shabads</h2>
+          <h2 className="text-white text-2xl font-semibold">Recently Added Shabads</h2>
         </div>
         <PageContent shabads={shabads}/>
       </div>
