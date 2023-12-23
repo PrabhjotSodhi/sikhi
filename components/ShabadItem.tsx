@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import useLoadImage from "@/hooks/useLoadImage";
 import { Shabad } from "@/types";
+import PlayButton from "./PlayButton";
 
 interface ShabadItemProps {
     data: Shabad;
@@ -21,7 +22,7 @@ const ShabadItem: React.FC<ShabadItemProps> = ({data, onClick}) => {
                 <p className="font-semibold truncate w-full">{data.title}</p>
                 <p className="text-neutral-400 text-sm pb-4 w-full truncate">{data.author}</p>
             </div>
-            <div className="absolute bottom-24 right-5">Play Button</div>
+            <div className="absolute bottom-24 right-5"><PlayButton /></div>
         </div>
     )
 };
