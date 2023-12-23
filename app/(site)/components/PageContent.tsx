@@ -1,7 +1,19 @@
-const PageContent = () => {
+"use client"
+
+import ShabadItem from "@/components/ShabadItem";
+import { Shabad } from "@/types"
+
+interface PageContentProps {
+    shabads: Shabad[];
+}
+
+const PageContent: React.FC<PageContentProps> = ({shabads}) => {
+    if (shabads.length === 0) {
+        return (<div className="mt-4 text-neutral-400">No Shabads Available!</div>)
+    }
     return (
-        <div>
-            Page Content!
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4">
+            {shabads.map((item) => (<ShabadItem key={item.id} onClick={() => {}} data={item} />))}
         </div>
     );
 }

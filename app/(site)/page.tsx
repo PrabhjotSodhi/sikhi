@@ -1,5 +1,6 @@
 import getShabads from "@/actions/getShabads";
 import Header from "@/components/Header";
+import PageContent from "./components/PageContent";
 
 export const revalidate = 0;
 
@@ -17,7 +18,7 @@ export default async function Home() {
         <div className="flex justify-between items-center">
           <h2 className="text-white text-2xl font-semibold">Newest Shabads</h2>
         </div>
-        <PageContent />
+        <PageContent shabads={shabads}/>
       </div>
     </div>
   )
