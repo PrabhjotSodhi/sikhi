@@ -8,6 +8,8 @@ import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 import useUploadModal from "@/hooks/useUploadModal";
 
+import MediaItem from "./MediaItem";
+
 interface LibraryProps {
     shabads: Shabad[];
 }
@@ -35,7 +37,7 @@ const Library: React.FC<LibraryProps> = ({shabads}) => {
                 <AiOutlinePlus onClick={onClick} size={20} className="text-neutral-400 cursor-pointer hover:text-white transition" />
             </div>
             <div className="flex flex-col gap-y-2 mt-4 px-3">
-                {shabads.map((item) => (<div>{item.title}</div>))}
+                {shabads.map((item) => (<MediaItem onClick={() => {}} key={item.id} data={item} />))}
             </div>
         </div>
     );
