@@ -10,10 +10,6 @@ import useAuthModal from "@/hooks/useAuthModal";
 
 import Modal from "./Modal"
 
-
-
-
-
 const AuthModal = () => {
     const supabaseClient = useSupabaseClient();
     const router = useRouter();
