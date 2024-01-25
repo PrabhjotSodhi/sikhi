@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Full Stack Sikh hymns music player with Next.js 13.4 App Router
+
+This project is a full-stack music player built with Next JS, featuring advanced functionalities and a sleek UI design using Tailwind CSS. It integrates various technologies such as React, Tailwind, Supabase, PostgreSQL, and Stripe for a comprehensive music streaming experience.
+
+## Key Features
+
+### User Experience
+- **Sleek Tailwind Design**: Aesthetic and modern UI with responsive design for all devices.
+- **Animations and Transitions**: Engaging Tailwind animations and transition effects for a dynamic interface.
+- **Advanced Player Component**: An immersive audio experience with a feature-rich music player.
+
+### Functionality
+- **Shabad Upload**: Users can upload their own Shabads to the platform.
+- **Play Shabad Audio**: Stream music directly from the platform.
+- **Favorites System**: Allows users to mark and manage their favorite tracks.
+- **Playlists/Liked Shabads System**: Create and manage personal playlists and liked Shabads.
+
+### Authentication and Security
+- **Credential Authentication with Supabase**: Secure login and user data management.
+- **GitHub & Google Authentication**: Convenient sign-in options with GitHub and Google accounts.
+
+### Data Management
+- **File and Image Upload**: Utilized Supabase storage for managing file and image uploads.
+- **Client Form Validation**: Robust form handling using react-hook-form.
+- **Server Error Handling**: Implement react-toast for efficient server-side error management.
+
+### Payment Integration
+- **Stripe Integration**: Facilitate online payments with Stripe.
+- **Recurring Payment Integration**: Manage subscriptions with Stripe's recurring payment functionality.
+
+### Backend Operations
+- **Route Handlers**: Efficiently manage POST, GET, and DELETE routes.
+- **Direct Database Access**: Fetch data in server React components by directly accessing the database.
+- **Real-Time Component Relations**: Handle relations between Server and Child components in a real-time environment.
+- **Stripe Subscription Cancellation**: Provide users with the option to cancel their Stripe subscriptions.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
 
-```bash
+### 1. Clone the repository
+```shell
+git clone https://github.com/PrabhjotSodhi/sikhi.git
+```
+### 2. Install NPM packages
+```shell
+npm install
+```
+### 3. Setup the .env file
+```js
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+```
+### 4. Add SQL Tables
+Use `database.sql` file, create Shabads and liked_Shabads table
+### 4. Run the application
+```shell
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+Distributed under the MIT License. See `LICENSE` for more information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Prabhjot Sodhi - [sodhiprabhjot23@gmail.com]
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Project Link: [https://github.com/your_username/your_project_name](https://github.com/your_username/your_project_name)
